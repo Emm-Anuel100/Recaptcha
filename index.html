@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Google Recaptcha</title>
+   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+   
+   <form action="?" method="post">
+      <input type="text" name="" id="" required="" placeholder="Enter name"><br><br>
+      <input type="number" name="" id="" required="" placeholder="Enter number"><br><br>
+      <div class="g-recaptcha" data-sitekey="*********blQ*********"></div>
+      <input type="submit" value="go" id="submit_btn">
+   </form>
+</body>
+
+
+<script typ="text/javascript">
+   document.querySelector("#submit_btn").onclick = () =>{
+      const response = grecaptcha.getResponse();
+
+      if (response.length == 0) {
+         alert("please verify you are not a robot");
+         return false;
+      }
+   }
+</script>
+</html>
